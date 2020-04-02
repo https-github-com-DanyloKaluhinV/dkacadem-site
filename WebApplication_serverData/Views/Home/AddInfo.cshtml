@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Информация о датах </h3>
+    <table>
+        <tr class="header">
+            <td><p>Начальная дата</p></td>
+            <td><p>Конечная дата</p></td>
+            <td></td>
+        </tr>
+        @foreach (var b in ViewBag.Intervals)
+        {
+            <tr>
+                <td><p>@b.start.ToString("dd.MM.yyyy")</p></td>
+                <td><p>@b.end.ToString("dd.MM.yyyy")</p></td>
+                <td></td>
+            </tr>
+        }
+        <td><p><a href="/Home/AddData">Добавить дату</a></p></td>
+    </table>
+</div>
