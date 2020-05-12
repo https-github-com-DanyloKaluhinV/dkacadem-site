@@ -1,25 +1,41 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div>
-    <h3>Информация о датах </h3>
-    <table>
-        <tr class="header">
-            <td><p>Начальная дата</p></td>
-            <td><p>Конечная дата</p></td>
-            <td></td>
-        </tr>
-        @foreach (var b in ViewBag.Intervals)
-        {
-            <tr>
-                <td><p>@b.start.ToString("dd.MM.yyyy")</p></td>
-                <td><p>@b.end.ToString("dd.MM.yyyy")</p></td>
-                <td></td>
+    <div id="dates-table-container">
+        <h3>Информация о датах </h3>
+        <table id="dates-table">
+            <tr class="header">
+                <th><p>Начальная дата</p></th>
+                <th><p>Конечная дата</p></th>
             </tr>
-        }
-        <td><p><a href="/Home/AddData">Добавить дату</a></p></td>
-    </table>
-</div>
+            @foreach (var b in ViewBag.Intervals)
+            {
+                <tr>
+                    <td><p>@b.start.ToString("dd.MM.yyyy")</p></td>
+                    <td><p>@b.end.ToString("dd.MM.yyyy")</p></td>
+                </tr>
+            }
+        </table>
+        <p><a href="/Home/AddData">Добавить дату</a></p>
+    </div>
 
+<style>
+    #dates-table {
+        margin: 0 auto;
+    }
+
+    #dates-table {
+        border: 3px solid black;
+        border-collapse: collapse;
+    }
+    td, th {
+        border: 2px solid black;
+        padding: 3px;
+    }
+    #dates-table-container {
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
 
 

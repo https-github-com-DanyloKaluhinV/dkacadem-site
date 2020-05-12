@@ -4,14 +4,25 @@
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-    <nav>
+    <nav class="navbar-default">
         <ul class="menu">
             <li>@Html.ActionLink("Главная", "Index", "Home")</li>
         </ul>
     </nav>
+    <style>
+        .menu {
+            list-style: none;
+        }
+        nav li {
+            font-size: 1.5em;
+            display: inline;
+            margin: 0 10px;
+        }
+    </style>
     @RenderBody()
 </body>
 </html>
